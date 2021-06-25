@@ -13,25 +13,20 @@ public class CollisionEvent : MonoBehaviour
         }
         private void OnCollisionEnter2D(Collision2D collision) //충돌했을때 1회 호출되는 함수
         {
-            spriteRenderer.color = color;
+            spriteRenderer.color = color; //충돌시
         }
     
 
     private void OnCollisionStay2D(Collision2D collsion) //있어도 상관은 없으나 알림 자꾸 떠서 주석처리함
     {
-  //      Debug.Log(gameObject.name + " : OnCollisionStay2D() method executes");
+   Debug.Log(gameObject.name + " : OnCollisionStay2D() method executes");
   //충돌할때마다 log를 남겨줌
     }
 
         private void OnCollisionExit2D(Collision2D collision)
         {
-            spriteRenderer.color = Color.white;
+            spriteRenderer.color = Color.white; //충돌에서 벗어나는 순간
         }
-   
+  
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
