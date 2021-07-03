@@ -9,8 +9,9 @@ public class ObjectSpawner : MonoBehaviour
     private void Awake() {
 
         Instantiate(boxPrefab); //prefab : 오리지널 게임오브젝트를 복제하는 함수(모든게 원본과 동일)
-        //한번 호출할때마다 cloning한번해줌
-        
+                                //한번 호출할때마다 cloning한번해줌
+
+        /*
         //instantiate(원본 오브젝트, 위치, 회전)
         Instantiate(boxPrefab, new Vector3(3, 3, 0), Quaternion.identity); //이 함수는 호출 위치도 선언 가능함
         Instantiate(boxPrefab, new Vector3(-1, -2, 0), Quaternion.identity);
@@ -29,6 +30,16 @@ public class ObjectSpawner : MonoBehaviour
         clone.transform.position = new Vector3(2, 1, 0);
         //게임 오브젝트의 크기 변경
         clone.transform.localScale = new Vector3(3, 2, 1);
+        */
+
+        for (int y = 0; y < 10; ++y)
+        {
+            for (int x = 0; x < 10; ++x) 
+            {
+                Vector3 position = new Vector3(-4.5f + x, 4.5f - y, 0);
+                Instantiate(boxPrefab, position, Quaternion.identity);
+            }
+        }
 
 
     }
